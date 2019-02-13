@@ -8,16 +8,16 @@ import tools.*;
 
 /**
  * 
- * Praktika 8 task 1
+ * Praktika
  * @author Roman Kruglikov EDTR22 183531
  */
 
-public class Praktika8_1_krugikovroman {
+public class Praktika_krugikovroman {
 
     public static void main(String[] args) {
         //PRAKTIKA_8-1
         
-        /*
+        
         System.out.println("************************************************************************************\n");
         System.out.println("Roman Kruglikov EDTR12 Praktika_8-1");
         System.out.println("Work with array\n");
@@ -60,7 +60,7 @@ public class Praktika8_1_krugikovroman {
         int secondBySize = ArrayTools.findSecondBySize(randomNumbers);
         
         System.out.println("Second by size array number: " + secondBySize);
-        */
+        
         
         //PRAKTIKA_8-2
         /*
@@ -100,6 +100,7 @@ public class Praktika8_1_krugikovroman {
         }
         */
         
+        /*
         //Praktika9
         System.out.println("************************************************************************************\n");
         System.out.println("Roman Kruglikov EDTR12 Praktika_9");
@@ -108,20 +109,82 @@ public class Praktika8_1_krugikovroman {
         
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Type any sentence:\n");
+        System.out.println("Type any sentence:");
         String string = scanner.nextLine();
         
         //String in upper or lower case
-        System.out.println( StringTools.changeCase(string, "upper") );
+        System.out.println( "\n" + StringTools.changeCase(string, "upper") );
         System.out.println( StringTools.changeCase(string, "lower") );
         
         //Number of words
-        int numOffords = StringTools.wordsAmount(string);
+        int numOfWords = StringTools.wordsAmount(string);
         
-        System.out.println("Number of words: " + numOffords);
+        System.out.println("\nNumber of words: " + numOfWords);
         
         //Most long and short words
+        Map<String, String> shortLongWords = StringTools.getLongShortWords(string);
         
+        System.out.println("\nMost short word: " + shortLongWords.get("short"));
+        System.out.println("Most long word: " + shortLongWords.get("long"));    
+        
+        //Words in ascending or descending order
+        String[] ascendig = StringTools.showWordsInOrder(string, true);
+        String[] descendig = StringTools.showWordsInOrder(string, false);
+        
+        System.out.println("Ascending words order:");
+        for ( String s : ascendig ) {
+            System.out.println(s);
+        }
+        
+        System.out.println("\nDescending words order:");
+        for ( String s : descendig ) {
+            System.out.println(s);
+        }
+        
+        //Find word in the string
+        String searhedWord = "world";
+        
+        ArrayList<Integer> wordIndexes = StringTools.findWord(string, searhedWord);
+        
+        if ( wordIndexes.isEmpty() ) {
+            System.out.println("\nThere is no such words: " + searhedWord);
+        } else {
+            for ( Object index : wordIndexes.toArray() ) {
+                System.out.println("Word: '" + searhedWord +  "' was found at: " + index);
+            }
+        }
+        
+        //Find words with equal first and last letters
+        ArrayList<String> words = StringTools.equalFirstLastLetters(string);
+        
+        if ( !words.isEmpty() ) {
+            System.out.println("\nWords with equal first and last letters");
+            for ( Object word : words.toArray() ) {
+                System.out.println(word);
+            }
+        }
+        
+        //Find anagrams
+        Map<String, String> anagrams = StringTools.findAnagrams(string);
+        
+        if ( !anagrams.isEmpty() ) {
+            System.out.println("\nWords anagrams:");
+            for ( String word : anagrams.keySet() ) {
+                System.out.println(word + " -> " + anagrams.get(word));
+            }
+        }
+        
+        //Find palindromes
+        ArrayList<String> palindromes = StringTools.findPalindromes(string);
+        
+        if ( !palindromes.isEmpty() ) {
+            System.out.println("\nPalindromes:");
+            
+            for ( Object palindrome : palindromes ) {
+                System.out.println(palindrome);
+            }
+        }
+        */
     }
     
 }

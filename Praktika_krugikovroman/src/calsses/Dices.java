@@ -19,6 +19,10 @@ public class Dices {
         }
     }
     
+    /**
+     * 
+     * @return int randomPoints - random number from 2 to 12, two dices rolling result
+     */
     public int roll() {
         int randomPoints = ArrayTools.getRandomNumber(2, 12);
         System.out.println(randomPoints);
